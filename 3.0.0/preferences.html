@@ -78,13 +78,9 @@
 						else if(children[i].name == "languageCode") {
 							var translation = translations[children[i].value].translation;
 							params["translation"] = [];
-							for (var j = 0; j < translation.length; j++) {
-								// Double encoding (then manually decoding the second
-								// pass) fixes an issue with translations on Android
-								params["translation"].push(
-									encodeURIComponent(base64_encode(translation[j]))
-								);
-							}
+                            params["translation"].push(
+                                    encodeURIComponent(base64_encode(translation))
+                                    );
 							
 							params[children[i].name] = children[i].value;
 						}
