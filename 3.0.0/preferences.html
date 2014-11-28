@@ -45,7 +45,9 @@
 					select.appendChild(option);
 				}
 			}
-			
+
+
+
 			window.onload = function() {
 				buildLanguagePicker();
 				
@@ -80,7 +82,7 @@
 								// Double encoding (then manually decoding the second
 								// pass) fixes an issue with translations on Android
 								params["translation"].push(
-									encodeURIComponent(encodeURIComponent(translation[j]))
+									encodeURIComponent(base64_encode(translation[j]))
 								);
 							}
 							
@@ -97,6 +99,7 @@
 			}
 		</script>
 		<script type="text/javascript" src="../l10n.js"></script>
+		<script type="text/javascript" src="../encode.js"></script>
 	</head>
 	<body>
 		<h1>Futura Weather</h1>
